@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Crossy Road</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🐤%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header id="lede" class="hidden">
+      <h1>Before and after</h1>
+      <p>Same roads, same seed. One bot only checks the next hop and crashes. The other plans ahead, scores fast, and stays alive.</p>
+    </header>
+    <div id="stage">
+      <div class="column" id="col-a">
+        <h2 class="watch-title hidden" id="title-a">Before</h2>
+        <section class="phone" id="phone-a">
+          <div class="screen">
+            <canvas id="cv-a" width="420" height="760" aria-label="Crossy Road game"></canvas>
+            <div class="sheet" id="menu">
+              <p class="eyebrow">Unofficial recreation</p>
+              <h1>Crossy Road</h1>
+              <p class="help">Hop the grass, roads, rivers, and rails. Cars, water, trains, and a patient eagle will end the run.</p>
+              <div class="chars" id="chars">
+                <button type="button" data-character="chicken" class="selected">🐤<span>Chick</span></button>
+                <button type="button" data-character="duck">🦆<span>Duck</span></button>
+                <button type="button" data-character="bunny">🐰<span>Bun</span></button>
+              </div>
+              <button type="button" id="play" class="go">Play</button>
+              <p class="split">Bot animations</p>
+              <button type="button" id="watch-before" class="ghost">Before · crashes</button>
+              <button type="button" id="watch-after" class="ghost good">After · never dies</button>
+              <button type="button" id="watch-both" class="ghost both">Play both side by side</button>
+              <p class="best" id="best-line">Best 0</p>
+            </div>
+            <div class="sheet hidden" id="gameover">
+              <p class="eyebrow" id="go-kicker">Run over</p>
+              <h2 id="go-title">Splat!</h2>
+              <p class="go-score" id="go-score">0</p>
+              <p class="help" id="go-detail"></p>
+              <button type="button" id="retry" class="go">Retry</button>
+              <button type="button" id="new-run" class="ghost">New run</button>
+              <button type="button" id="to-menu" class="ghost">Menu</button>
+            </div>
+            <div class="pad" id="pad">
+              <button type="button" data-dir="up" aria-label="Hop forward">▲</button>
+              <button type="button" data-dir="left" aria-label="Hop left">◀</button>
+              <button type="button" data-dir="down" aria-label="Hop back">▼</button>
+              <button type="button" data-dir="right" aria-label="Hop right">▶</button>
+            </div>
+            <button type="button" id="back" class="icon-btn hidden">Menu</button>
+            <button type="button" id="mute" class="icon-btn">Sound</button>
+          </div>
+        </section>
+      </div>
+      <div class="column hidden" id="col-b">
+        <h2 class="watch-title" id="title-b">After</h2>
+        <section class="phone">
+          <div class="screen">
+            <canvas id="cv-b" width="420" height="760" aria-label="After bot playing Crossy Road"></canvas>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="js/main.js?v=16"></script>
+  </body>
+</html>
